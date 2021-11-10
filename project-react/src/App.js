@@ -18,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <p>ESTE ES UN PARRAFO DE PRUEBA</p>
     </div>
   );
 }
