@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Temperatura_Actual">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:gravity="center_vertical"
+        android:text="Temperatura Actual"
+        android:textColor="#040404"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtMenosGrados"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:text="-C°"
+            android:textColor="#2196F3"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtMasGrados"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:text="+C°"
+            android:textColor="#F44336"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="373dp"
+        android:layout_height="39dp"
+        android:gravity="center_vertical"
+        android:text="Calefactores"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="307dp"
+        android:layout_height="69dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnONCalefactor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetRight="5dp"
+            android:text="ON" />
+
+        <Button
+            android:id="@+id/btnOFFCalefactor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetLeft="5dp"
+            android:text="OFF" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="374dp"
+        android:layout_height="41dp"
+        android:gravity="center_vertical"
+        android:text="Aire Acondicionado"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="306dp"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnONAire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetRight="5dp"
+            android:text="ON" />
+
+        <Button
+            android:id="@+id/btnOFFAire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetLeft="5dp"
+            android:text="OFF" />
+    </LinearLayout>
+
+</LinearLayout>
