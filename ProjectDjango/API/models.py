@@ -1,8 +1,5 @@
 from django.db import models
 from django.db.models.base import Model
-from django import forms
-import uuid
-
 
 class Categorias(models.Model):
     Nombre_categoria = models.CharField(max_length=100)
@@ -75,7 +72,7 @@ class Reserva(models.Model):
     Fecha_inicio = models.DateField(auto_now=False)
     Fecha_fin = models.DateField(auto_now=False)
     Precio_total = models.DecimalField(max_digits=5, decimal_places=2)
-    Token = models.UUIDField(default=uuid.uuid4, editable=False)
+    Codigo = models.CharField(max_length=6, default="")
 
     def __str__(self):
         return self.Cliente.Nombre + " - " + self.Habitacion.Nro_habitacion
