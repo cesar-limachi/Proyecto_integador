@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: url('./font/Ubuntu-Bold.ttf');
+}
+
+.nav-fondo {
+    background-image: url('./img/Sel.jpg');
+}
+
+.logo {
+    background-image: url('./img/logo1.png');
+}
+
+.links{
+    color: white !important;
+    font-family: 'Ubuntu Bold' !important;
+}
+
+.links-register{
+    background-color: rgb(255, 255, 255);
+    color: rgb(56, 56, 56) !important;
+}
