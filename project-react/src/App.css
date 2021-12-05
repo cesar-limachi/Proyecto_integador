@@ -7,6 +7,49 @@
   pointer-events: none;
 }
 
+.CardCustom {
+  background-color: #ffffffa8 !important;
+  width: '30rem' !important;
+  margin: '10px' !important;
+  padding: '20px 0px 20px 0px' !important;
+  transition: transform 0.2s ease;
+  backdrop-filter: blur(10px)
+}
+
+.CardCustom:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 550px) {
+  .TransparentCard {
+    width:'15rem'; 
+    align-self: 'center';
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 950px) {
+  .TransparentCard {
+    width:'10rem'; 
+    align-self: 'center';
+  }
+}
+
+@media only screen and (min-width: 951px){
+  .TransparentCard {
+    width:'15rem'; 
+    align-self: 'center';
+  }
+}
+
+.fondo {
+  background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/01/83/a6/d6/piscina-con-mar-de-fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 10px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,6 +75,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
