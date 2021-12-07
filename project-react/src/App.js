@@ -1,64 +1,215 @@
 import logo from './logo.svg';
 import './App.css';
-import react, { Fragment } from 'react';
+import react, { Component, Fragment } from 'react';
 import Navegacion from './components/layouts/nabvar';
+import Footer from './components/layouts/footer';
 import Card from 'react-bootstrap/card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const calificacion = 5;
 
-function App() {
+export class App extends Component{
+
+  state = {
+    hoteles: []
+  }
+
+  componentDidMount() {
+    axios.get('http://127.0.0.1:8000/api/hoteles/')
+    .then(res => {
+        this.setState({ hoteles: res.data });
+    })
+  }
+
+  render(){
   return (
     <Fragment>
       <Navegacion />
       <div className="fondo">
         <CardGroup className="container">
-
-          <Card className='CardCustom ' style={{ margin: '15px' }}>
-            <div className='TransparentCard'>
-              <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" />
-              <Card.Body>
-                <Card.Title>
-                  <Link className='text-decoration-none text-dark' to="/habitacion">Nombre del hotel</Link>
-                </Card.Title>
-                <Card.Text>
-                  Calificacion:<br />
-                  {Array.from(Array(calificacion), (e, i) => {
-                    return '⭐'
-                  })}
-                </Card.Text>
-                <Card.Text> Ubicacion: Ingresar ubicacion</Card.Text>
-                <Card.Text> Descripcion del hotel mostrado </Card.Text>
-              </Card.Body>
-            </div>
-          </Card>
-
+          { this.state.hoteles.slice(0, 4)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
         </CardGroup>
 
         <CardGroup className="container">
-          <Card className='CardCustom ' style={{ margin: '15px' }}>
-            <div className='TransparentCard'>
-              <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg" />
-              <Card.Body>
-                <Card.Title>
-                  <Link className='text-decoration-none text-dark' to="/habitacion">Nombre del hotel</Link>
-                </Card.Title>
-                <Card.Text>
-                  Calificacion:<br />
-                  {Array.from(Array(calificacion), (e, i) => {
-                    return '⭐'
-                  })}
-                </Card.Text>
-                <Card.Text> Ubicacion: Ingresar ubicacion</Card.Text>
-                <Card.Text> Descripcion del hotel mostrado </Card.Text>
-              </Card.Body>
-            </div>
-          </Card>
+          { this.state.hoteles.slice(4, 8)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
         </CardGroup>
+        <CardGroup className="container">
+          { this.state.hoteles.slice(8, 12)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
+        </CardGroup>
+        <CardGroup className="container">
+          { this.state.hoteles.slice(12, 16)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
+        </CardGroup>
+        <CardGroup className="container">
+          { this.state.hoteles.slice(16, 20)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
+        </CardGroup>
+        <CardGroup className="container">
+          { this.state.hoteles.slice(20, 24)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
+        </CardGroup>
+        <CardGroup className="container">
+          { this.state.hoteles.slice(24, 28)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
+        </CardGroup>
+        <CardGroup className="container">
+          { this.state.hoteles.slice(28, 32)
+            .map(hotel => 
+            <Card className='CardCustom ' style={{ margin: '15px' }}>
+              <div className='TransparentCard'>
+                <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
+                <Card.Body>
+                  <Card.Title>
+                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                  </Card.Title>
+                  <Card.Text>
+                    Calificacion:<br />
+                    {
+                    Array.from(Array(parseInt(hotel.Calificacion)), (e, i) => {
+                      return '⭐'
+                    })}
+                  </Card.Text>
+                  <Card.Text> Ubicacion: {hotel.Ubicacion}</Card.Text>
+                </Card.Body>
+              </div>
+          </Card>)}
+        </CardGroup>
+      </div>
+      <div>
       </div>
     </Fragment>
   );
-}
+}}
 
 export default App;

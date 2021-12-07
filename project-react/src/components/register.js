@@ -1,4 +1,5 @@
-import react, { Fragment } from 'react';
+import React, {Fragment, useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navegacion from './layouts/nabvar'
 import style from './styles.css'
 import Form from 'react-bootstrap/Form';
@@ -6,6 +7,30 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 function Register() {
+    const [Correo, setCorreo] = useState("");
+    const [Password, setPassword] = useState("");
+    const [Nombre, setNombre] = useState("");
+    
+    const navigate = useNavigate();
+
+    async function signup(){
+        console.warn(Correo, Password, Nombre)
+        let item = {Correo, Password, Nombre};
+        console.warn(item)
+
+        let result = await fetch("http://127.0.0.1:8000/api/register/", {
+            method: 'POST', 
+            body: JSON.stringify(item),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept" : 'application/json'
+            }
+        });
+
+        result = await result.json()
+        localStorage.setItem("user-info", JSON.stringify(result))
+        navigate("/")
+    }
     return (
         <Fragment>
             <Navegacion />
@@ -15,26 +40,21 @@ function Register() {
                         <Form className={'formlogin'} >
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label className='labellogin'>Nombre de Usuario</Form.Label>
-                                <Form.Control type="email" placeholder="Ingrese un  usuario" />
+                                <Form.Control type="text" placeholder="Ingrese un  usuario" 
+                                onChange={(e => setNombre(e.target.value))}/>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label className='labellogin'>Correo</Form.Label>
-                                <Form.Control type="email" placeholder="example@correo.com" />
+                                <Form.Control type="email" placeholder="example@correo.com" 
+                                onChange={(e => setCorreo(e.target.value))}/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Row>
-                                    <Col>
-                                        <Form.Label className='labellogin'>Contraseña</Form.Label>
-                                        <Form.Control type="password" placeholder="********" />
-                                    </Col>
-                                    <Col>
-                                        <Form.Label className='labellogin'>Confirmar contraseña</Form.Label>
-                                        <Form.Control type="password" placeholder="********" />
-                                    </Col>
-                                </Row>
+                                <Form.Label className='labellogin'>Contraseña</Form.Label>
+                                <Form.Control type="password" onChange={(e => setPassword(e.target.value))}/>
                             </Form.Group>
-                            <Button variant="primary" type="submit">
+
+                            <Button variant="primary" onClick={signup}>
                                 Registrarse
                             </Button>
                         </Form>
