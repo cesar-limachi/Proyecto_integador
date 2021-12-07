@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary.uploader
+import cloudinary.api
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-lc1cj$h=hmli8t6k0@1$ygl)^=#!g4&uz=a#56jd9_5*7$(n92
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage', 
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -78,14 +83,29 @@ WSGI_APPLICATION = 'ProjectDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'bzp8hn1e4en4tkjcs2it',
+#        'USER': 'ubkcpyp3esjl73of',
+#        'PASSWORD': 'kOAw8I5eAk6eNemKdz5d',
+#        'HOST': 'bzp8hn1e4en4tkjcs2it-mysql.services.clever-cloud.com',
+#        'PORT': '3306',
+#    }
+#}
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bzp8hn1e4en4tkjcs2it',
-        'USER': 'ubkcpyp3esjl73of',
-        'PASSWORD': 'kOAw8I5eAk6eNemKdz5d',
-        'HOST': 'bzp8hn1e4en4tkjcs2it-mysql.services.clever-cloud.com',
+        'NAME': 'servidor-project-final',
+        'USER': 'dbproject@servidor-project-final',
+        'PASSWORD': 'Tecsup1234',
+        'HOST': 'servidor-project-final.mysql.database.azure.com',
         'PORT': '3306',
+        'OPTIONS': {
+            'ssl': {'ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}
+        }
     }
 }
 
@@ -128,6 +148,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import cloudinary
+#cloudinary.config( 
+#  cloud_name = "dymxaeatq", 
+#  api_key = "798161215414451", 
+#  api_secret = "KP1MoUlkW_as3KSqh-ZH8Oh8biQ" 
+#)
+
+CLOUDINARY_STORAGE  =  { 
+    'CLOUD_NAME' :  'dymxaeatq' , 
+    'API_KEY' :  '798161215414451' , 
+    'API_SECRET' :  'KP1MoUlkW_as3KSqh-ZH8Oh8biQ' 
+}
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -138,4 +172,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+DEFAULT_FILE_STORAGE  =  'cloudinary_storage.storage.MediaCloudinaryStorage'
 

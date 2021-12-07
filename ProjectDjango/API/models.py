@@ -41,6 +41,7 @@ class Habitaciones(models.Model):
     Hotel = models.ForeignKey(Hoteles, on_delete=models.CASCADE, related_name="hotel_habitaciones")
     Tipo_habitacion = models.ForeignKey(TipoHabitacion, on_delete=models.CASCADE, related_name="tipo_habitacion_habitaciones")
     Imagen = models.ImageField(upload_to='habitaciones', blank=True, null=True)
+    Descripcion = models.CharField(max_length=1000, default='')
     Estado_habitacion = models.CharField(max_length=2, choices=ChoicesEstado) # A  X  A="Habilitado"  X="Deshabilitado"
     Cerradura_electronica = models.BooleanField(default=True)
     Wifi = models.CharField(max_length=2, choices=ChoicesWifi) # 4G o 5G
