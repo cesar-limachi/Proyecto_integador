@@ -98,16 +98,19 @@ WSGI_APPLICATION = 'ProjectDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'servidor-project-final',
+        'NAME': 'projectofinal',
         'USER': 'dbproject@servidor-project-final',
         'PASSWORD': 'Tecsup1234',
         'HOST': 'servidor-project-final.mysql.database.azure.com',
         'PORT': '3306',
         'OPTIONS': {
-            'ssl': {'ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}
+            'ssl': {'ca':'c:/ssl/BaltimoreCyberTrustRoot.crt.pem'}
         }
     }
 }
+
+#cnx = mysql.connector.connect(user="dbproject@servidor-project-final", password={your_password}, host="servidor-project-final.mysql.database.azure.com", port=3306, database={your_database}, ssl_ca={ca-cert filename}, ssl_verify_cert=true)
+
 
 
 # Password validation
