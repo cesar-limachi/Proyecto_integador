@@ -1,5 +1,4 @@
 import React, {Fragment, Component} from 'react'
-import { useNavigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav';
@@ -7,7 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from './img/logo1.png'
-import Nabvar from './Navbar.css'
+import './Navbar.css'
 import Fondo from './img/Sel.jpg'
 import axios from 'axios';
 
@@ -46,14 +45,14 @@ class Navegacion extends Component{
                                 { 
                                 this.state.categorias
                                 .map(categoria => 
-                                    <Link key={categoria} to={`/hoteles/${categoria.id}`} className='nav-link links'>{categoria.Nombre_categoria}</Link>
+                                    <Link key={categoria.id} to={`/hoteles/${categoria.id}/`} className='nav-link links'>{categoria.Nombre_categoria}</Link>
                                 )
                                 } 
                                 
                             </Nav>
                             <Nav>
                             {localStorage.getItem('user-info')?
-                                <NavDropdown className='links links-user' title={this.user && this.user.Nombre}>
+                                <NavDropdown className='links links-user'  title={this.user && this.user.Nombre}>
                                     <NavDropdown.Item href="/" onClick={e=>this.logOut(e)}>Logout</NavDropdown.Item>
                                 </NavDropdown>
                                 :

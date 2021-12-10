@@ -1,35 +1,49 @@
-import { Fragment } from "react"
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/esm/Row";
-import Image from "react-bootstrap/Image";
-import Col from "react-bootstrap/esm/Col";
-import Navegacion from "./layouts/nabvar";
-import Card from 'react-bootstrap/Card'
-import logo from './layouts/img/logo1.png'
-import Button from "react-bootstrap/Button";
-import style from './styles.css'
-import Fondo from './layouts/img/Sel.jpg'
-function Habitacion() {
+import React, { useEffect, Fragment, useState } from 'react'
+import '../App.css';
+import Navegacion from './layouts/nabvar';
+import Card from 'react-bootstrap/card'
+import CardGroup from 'react-bootstrap/CardGroup'
+import { Link, useParams } from 'react-router-dom';
+import Axios from 'axios';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import './habitacion.css'
+
+const Habitacion = () => {
+
+    const { idHabi } = useParams()
+    const [state, setState] = useState([])
+    useEffect(() => {
+        const gethabitaciones= async () => {
+            await Axios({
+                method: 'get',
+                url: `http://127.0.0.1:8000/api/detallehabitacion/${idHabi}`
+            }).then(response => {
+                // console.log(response.data[0]);
+                setState(response.data)
+            })
+        }
+        gethabitaciones()
+    }, [idHabi])
+
     return (
         <Fragment>
             <Navegacion />
             <center>
-                <div style={{
-                    backgroundImage: 'URL(https://media-cdn.tripadvisor.com/media/photo-s/0a/05/24/a4/nastasi-hotel-spa.jpg)',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    minHeight: '90vh',
-                    backdropFilter: 'blur(10px)'}}>
+                <div className='fondoHabitacion'>
 
                     <Container style={{
                         paddingTop: '100px',}}>
-
+                        { state
+                        .map(habitacion => 
                         <Row style={{
                             height: '100%',}}>
 
                             <Col sm={7}>
-                                <img className='ImagenHabitacion' src='https://media-cdn.tripadvisor.com/media/photo-s/0a/05/24/a4/nastasi-hotel-spa.jpg' />
+                                <img className='ImagenHabitacion' src={habitacion.Imagen} />
                             </Col>
                             <Col sm={5} style={{
                                 backgroundColor: '#ffffffa8 !important',
@@ -46,28 +60,23 @@ function Habitacion() {
                                         padding: '10px',
                                         overflow: 'auto',}}>
 
-                                        <Card.Title>Nombre de la habitacion</Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">Numero de habitacion</Card.Subtitle>
-                                        <Card.Text>
-                                            Servicios /* Wifi , Cerradura electronica , etc. */
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                            Descripcion de la habitacion
-                                        </Card.Text>
+                                        <Card.Title>{habitacion.Nro_habitacion}</Card.Title>
+                                        <Card.Subtitle className="mb-2 text-muted">{habitacion.Nro_habitacion}</Card.Subtitle>
+                                        <Card.Text>{habitacion.Descripcion}</Card.Text>
+                                        <Card.Text> <b>Cerradura Electronica:</b> {habitacion.Cerradura_electronica==true?'Si':'No' } </Card.Text>
+                                        <Card.Text> <b>Wifi:</b> {habitacion.Wifi=='1'?'4G':'5G' } </Card.Text>
+                                        <Card.Text><small className="text-muted"> {habitacion.Estado_habitacion=='1'?'Disponible':'No disponible' } </small></Card.Text>
+                                        <Form>
+                                            <Form.Group as={Col} controlId="formGridEmail" className="mb-3">
+                                            <Form.Label>Fecha de inicio</Form.Label>
+                                            <Form.Control style={{width:"80%"}} size="sm" type="date" placeholder="Enter email" />
+                                            </Form.Group>
+
+                                            <Form.Group as={Col} controlId="formGridPassword">
+                                            <Form.Label>Fecha de fin</Form.Label>
+                                            <Form.Control style={{width:"80%"}} size="sm" type="date" placeholder="Password" />
+                                            </Form.Group>
+                                        </Form>
                                     </div>
                                     <div style={{
                                         textAlign: 'center',
@@ -78,10 +87,9 @@ function Habitacion() {
                                     </div>
                                 </Card>
                             </Col>
-                        </Row>
+                        </Row>)}
                     </Container>
                 </div>
-
             </center>
         </Fragment >
     )

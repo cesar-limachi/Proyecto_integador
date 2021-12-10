@@ -64,7 +64,7 @@ def login(request):
         serializer = ClienteSerializer(clientesa, many=True)
         return Response(serializer.data[0])
 
-@api_view(['POST'])
+@api_view(['POST']) 
 def register(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
@@ -86,7 +86,14 @@ def hotel_categoria(request, id):
     if request.method == 'GET':
         hoteles_por_categoria = Hoteles.objects.filter(Categoria=id)
         serializer = HotelesSerializer(hoteles_por_categoria, many=True)
-        return Response(serializer.data)        
+        return Response(serializer.data)     
+
+@api_view(['GET'])
+def detallehotel(request, pk):
+    if request.method == 'GET':
+        hoteles_por_categoria = Hoteles.objects.filter(id=pk)
+        serializer = HotelesSerializer(hoteles_por_categoria, many=True)
+        return Response(serializer.data)    
 
 @api_view(['GET'])
 def tipohabitacion(request):
@@ -96,11 +103,32 @@ def tipohabitacion(request):
         return Response(serializer.data)
 
 @api_view(['GET'])
+def gettipohabitacion(request, pk):
+    if request.method == 'GET':
+        lista_tipohabitacion = TipoHabitacion.objects.filter(id=pk)
+        serializer = TipoHabitacionSerializer(lista_tipohabitacion, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
 def habitaciones(request):
     if request.method == 'GET':
         lista_habitaciones = Habitaciones.objects.all()
         serializer = HabitacionesSerializer(lista_habitaciones, many=True)
         return Response(serializer.data)
+
+@api_view(['GET'])
+def detallehabitacion(request, pk):
+    if request.method == 'GET':
+        lista_habitaciones = Habitaciones.objects.filter(id=pk)
+        serializer = HabitacionesSerializer(lista_habitaciones, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def habitaciones_hotel(request, id_hotel):
+    if request.method == 'GET':
+        habitaciones_por_hotel = Habitaciones.objects.filter(Hotel=id_hotel)
+        serializer = HabitacionesSerializer(habitaciones_por_hotel, many=True)
+        return Response(serializer.data) 
 
 @api_view(['GET'])
 def arduinos(request):

@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Route, Link, BrowserRouter, Routes } from 'react-router-dom'
+import { Route, BrowserRouter, Routes} from 'react-router-dom'
 import Login from './components/login';
 import Register from './components/register';
 import Habitacion from './components/habitacion';
-import Hoteles_categorias from './components/hoteles_categorias';
+import HotelesCategorias from './components/HotelesCategorias';
+import HabitacionesHotel from './components/HabitacionesHotel'
 
 const routing = (
   <div>
@@ -17,7 +18,9 @@ const routing = (
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/habitacion" element={<Habitacion />} />
-        <Route path="/hoteles/:id" element={<Hoteles_categorias />} />
+        <Route exact path="/hoteles/:id/" element={<HotelesCategorias />} />
+        <Route exact path="/habitaciones/:idHotel/" element={<HabitacionesHotel />} />
+        <Route exact path="/detallehabitacion/:idHabi/" element={<Habitacion />} />
       </Routes>
     </BrowserRouter>
   </div>

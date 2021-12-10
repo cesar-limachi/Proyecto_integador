@@ -8,11 +8,15 @@ urlpatterns = [
     path('cliente/', views.cliente),
     path('login/', views.login),
     path('register/', views.register),
-    path('hoteles/<int:id>/', views.hotel_categoria),
+    path('hotel/<int:id>/', views.hotel_categoria),
+    path('habitacion/<int:id_hotel>/', views.habitaciones_hotel),
+    path('detallehabitacion/<int:pk>/', views.detallehabitacion),
 
     path('tipohabitacion/', views.tipohabitacion),
+    path('tipohabitaciondata/<int:pk>/', views.gettipohabitacion),
     path('habitaciones/', views.habitaciones),
     path('hoteles/', views.hoteles),
+    path('detallehotel/<int:pk>/', views.detallehotel),
     path('arduinos/', views.arduinos),
     path('reserva/', views.reserva),
     

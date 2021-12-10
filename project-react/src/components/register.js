@@ -1,11 +1,8 @@
-import React, {Fragment, useState, useEffect} from 'react'
+import React, {Fragment, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navegacion from './layouts/nabvar'
-import style from './styles.css'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 function Register() {
     const [Correo, setCorreo] = useState("");
     const [Password, setPassword] = useState("");

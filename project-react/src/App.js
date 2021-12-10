@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import react, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import Navegacion from './components/layouts/nabvar';
 import Card from 'react-bootstrap/card'
 import CardGroup from 'react-bootstrap/CardGroup'
@@ -19,7 +18,7 @@ export class App extends Component{
     axios.get('http://127.0.0.1:8000/api/hoteles/')
     .then(res => {
         this.setState({ hoteles: res.data });
-    })
+    }, [])
   }
 
   render(){
@@ -30,12 +29,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(0, 4)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id}  className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -53,12 +52,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(4, 8)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -75,12 +74,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(8, 12)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -97,12 +96,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(12, 16)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -119,12 +118,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(16, 20)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -141,12 +140,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(20, 24)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -163,12 +162,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(24, 28)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />
@@ -185,12 +184,12 @@ export class App extends Component{
         <CardGroup className="container">
           { this.state.hoteles.slice(28, 32)
             .map(hotel => 
-            <Card className='CardCustom ' style={{ margin: '15px' }}>
+            <Card key={hotel.id} className='CardCustom ' style={{ margin: '15px' }}>
               <div className='TransparentCard'>
                 <Card.Img variant="top" src={hotel.Imagen} width="100px" height="200px"/>
                 <Card.Body>
                   <Card.Title>
-                    <Link className='text-decoration-none text-dark' to="/habitacion">{hotel.Nombre_hotel}</Link>
+                    <Link className='text-decoration-none text-dark' to={`/habitaciones/${hotel.id}/`}>{hotel.Nombre_hotel}</Link>
                   </Card.Title>
                   <Card.Text>
                     Calificacion:<br />

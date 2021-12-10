@@ -98,14 +98,11 @@ WSGI_APPLICATION = 'ProjectDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'servidor-project-final',
-        'USER': 'dbproject@servidor-project-final',
-        'PASSWORD': 'Tecsup1234',
-        'HOST': 'servidor-project-final.mysql.database.azure.com',
+        'NAME': 'bzp8hn1e4en4tkjcs2it',
+        'USER': 'ubkcpyp3esjl73of',
+        'PASSWORD': 'kOAw8I5eAk6eNemKdz5d',
+        'HOST': 'bzp8hn1e4en4tkjcs2it-mysql.services.clever-cloud.com',
         'PORT': '3306',
-        'OPTIONS': {
-            'ssl': {'ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}
-        }
     }
 }
 
