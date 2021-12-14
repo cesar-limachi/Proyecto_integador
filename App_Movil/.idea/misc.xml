@@ -8,12 +8,23 @@
         <entry key="..\:/App_Movil/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/App_Movil/app/src/main/res/layout/activity_temperatura_actual.xml" value="0.3974358974358974" />
         <entry key="..\:/App_Movil/app/src/main/res/layout/activity_vista_principal.xml" value="0.4" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.12962962962962962" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/drawable/custom_button.xml" value="0.4197916666666667" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/drawable/horizontal_progress_bar.xml" value="0.10400000000000001" />
         <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/drawable/ic_launcher_background.xml" value="0.41025641025641024" />
-        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_datos_personales.xml" value="0.3943589743589744" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/drawable/vertical_progress_bar.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_datos_personales.xml" value="0.2727272727272727" />
         <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_informacion_habitacion.xml" value="0.3943589743589744" />
-        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_main.xml" value="0.3943589743589744" />
-        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_temperatura_actual.xml" value="0.3943589743589744" />
-        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_vista_principal.xml" value="0.3943589743589744" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_main.xml" value="0.37962962962962965" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_maps.xml" value="0.3287037037037037" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_registro.xml" value="0.264" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_servicio_habitaciones.xml" value="0.21944444444444444" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_temperatura_actual.xml" value="0.3228915662650602" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_token.xml" value="0.4" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_ver_habitacion.xml" value="0.264" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/activity_vista_principal.xml" value="0.1" />
+        <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/layout/listaservicios.xml" value="0.32524271844660196" />
         <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.41025641025641024" />
         <entry key="..\:/Proyecto_Integrador_Final/Proyecto_integador/App_Movil/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.41025641025641024" />
       </map>
@@ -24,5 +35,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3228915662650602" />
+      </ProjectState>
+    </option>
   </component>
 </project>

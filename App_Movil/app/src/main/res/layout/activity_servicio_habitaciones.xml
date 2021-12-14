@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ebe393c99662c84ceca7b18d48834141"
+    android:orientation="vertical"
+    tools:context=".Servicio_Habitaciones">
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:gravity="center"
+        android:text="Habitaciones"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnregresar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#F44336"
+        android:text="Regresar"
+        app:cornerRadius="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

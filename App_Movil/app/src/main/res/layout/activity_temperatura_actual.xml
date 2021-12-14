@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/temperatura_imimagen"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Temperatura_Actual">
@@ -11,53 +12,127 @@
     <TextView
         android:id="@+id/textView13"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
+        android:layout_height="56dp"
         android:gravity="center_vertical"
         android:text="Temperatura Actual"
-        android:textColor="#040404"
+        android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/txtTemp"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:text="0 °C"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LTemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
 
         <TextView
-            android:id="@+id/txtMenosGrados"
+            android:id="@+id/max5"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center|center_horizontal"
-            android:text="-C°"
-            android:textColor="#2196F3"
-            android:textSize="20sp" />
+            android:text="0°"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.369"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/max4"
+            app:layout_constraintVertical_bias="0.655" />
 
         <TextView
-            android:id="@+id/txtMasGrados"
+            android:id="@+id/max4"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
             android:layout_weight="1"
-            android:gravity="center|center_horizontal"
-            android:text="+C°"
-            android:textColor="#F44336"
-            android:textSize="20sp" />
+            android:shadowColor="#FFFFFF"
+            android:text="25°"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.366"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/max3" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/max3"
+            android:layout_width="23dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="50°"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.368"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/max2" />
+
+        <TextView
+            android:id="@+id/max2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="244dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="70°"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.366"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="100°"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/max2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.374"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.425" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="35dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="32dp"
+            android:elevation="1dp"
+            android:progressDrawable="@drawable/vertical_progress_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="373dp"
-        android:layout_height="39dp"
+        android:layout_width="366dp"
+        android:layout_height="45dp"
         android:gravity="center_vertical"
         android:text="Calefactores"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="307dp"
-        android:layout_height="69dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
@@ -66,6 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:insetRight="5dp"
+            app:cornerRadius="20sp"
             android:text="ON" />
 
         <Button
@@ -74,22 +150,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:insetLeft="5dp"
+            app:cornerRadius="20sp"
             android:text="OFF" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="374dp"
-        android:layout_height="41dp"
+        android:layout_height="40dp"
         android:gravity="center_vertical"
         android:text="Aire Acondicionado"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="306dp"
-        android:layout_height="62dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
@@ -98,7 +175,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:insetRight="5dp"
-            android:text="ON" />
+            android:text="ON"
+            app:cornerRadius="20sp" />
 
         <Button
             android:id="@+id/btnOFFAire"
@@ -106,7 +184,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:insetLeft="5dp"
-            android:text="OFF" />
+            android:text="OFF"
+            app:cornerRadius="20sp" />
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnregresar4"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#F44336"
+        android:text="Regresar"
+        app:cornerRadius="20sp" />
 
 </LinearLayout>

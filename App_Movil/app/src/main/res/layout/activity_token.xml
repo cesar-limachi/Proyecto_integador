@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/azul"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Token">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="354dp"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Bienvenido"
+        android:textColor="#03A9F4"
+        android:textSize="96sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="385dp"
+        android:layout_height="66dp"
+        android:gravity="center_vertical"
+        android:text="Ingrese el Token"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtToken"
+        android:layout_width="385dp"
+        android:layout_height="66dp"
+        android:gravity="center_vertical"
+        android:ems="10"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnIngresar2"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="199dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_button"
+        android:gravity="center"
+        android:text="Ingresar"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:cornerRadius="20dp"
+        app:strokeColor="#00BCD4" />
+
+    <Button
+        android:id="@+id/btnSalir2"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="199dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_button"
+        android:insetTop="18dp"
+        android:text="Salir"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:cornerRadius="20dp"
+        app:strokeColor="#00BCD4" />
+</LinearLayout>
